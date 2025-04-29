@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY . /app
 
 ENV PYTHONPATH=/app
+RUN pip install --upgrade pip
 
 RUN pip install --no-cache-dir -e . 
 

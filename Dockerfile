@@ -17,8 +17,6 @@ RUN pip install --upgrade pip
 
 RUN pip install --no-cache-dir -e . 
 
-RUN python pipeline/training_pipeline.py
-
 EXPOSE 5001
 
 CMD ["python","application.py"]

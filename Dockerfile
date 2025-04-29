@@ -1,7 +1,7 @@
 FROM python:slim
 
-ENV PYTHONDONTWRITEBYTECODE = 1 \
-    PYTHONUNBUFFER = 1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
@@ -10,7 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
    && apt-get clean \
    && rm -rf /var/lib/apt/lists/*
 
-COPY . .
+COPY . /app
+
+ENV PYTHONPATH=/app
 
 RUN pip install --no-cache-dir -e .
 

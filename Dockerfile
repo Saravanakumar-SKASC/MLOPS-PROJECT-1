@@ -14,8 +14,7 @@ COPY . /app
 
 ENV PYTHONPATH=/app
 
-RUN pip install --no-cache-dir -e . \
-    && pip install lightgbm
+RUN pip install --no-cache-dir -e . 
 
 RUN python pipeline/training_pipeline.py
 
